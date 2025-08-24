@@ -17,6 +17,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             title: todo,
         };
         res.status(201).json({ message: "success", data: newTodo, })
+    } else if (req.method === "DELETE"){
+        // delete all todos
+        res.status(200).json({message:"All todos Deleted",data:[]})
     }
 
 }
