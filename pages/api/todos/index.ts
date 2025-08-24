@@ -8,7 +8,7 @@ import { title } from "process";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "GET") {
-        res.status(200).json(todosData)
+        res.status(200).json( todosData )
     } else if (req.method === "POST") {
         const { todo } = req.body
 
@@ -17,9 +17,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             title: todo,
         };
         res.status(201).json({ message: "success", data: newTodo, })
-    } else if (req.method === "DELETE"){
+    } else if (req.method === "DELETE") {
         // delete all todos
-        res.status(200).json({message:"All todos Deleted",data:[]})
+        res.status(200).json({ message: "All todos Deleted", data: [] })
+    } else if (req.method === "PUT") {
+        res.status(200).json({ message: "Todos Repalce", data: req.body })
     }
 
 }
