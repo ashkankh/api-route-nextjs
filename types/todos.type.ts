@@ -1,4 +1,5 @@
 export interface todosType {
-    id: number,
+    id: number | undefined
     title: string
 }
+
